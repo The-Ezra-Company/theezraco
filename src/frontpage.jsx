@@ -12,7 +12,7 @@ export default function Frontpage() {
 
   // **** RENDER ****
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-black text-center">
+    <div className="relative h-screen w-full overflow-hidden bg-slate-600 text-center">
       {/* Background video */}
       <video
         className="absolute top-0 left-0 z-0 h-full w-full object-cover blur-sm"
@@ -24,6 +24,7 @@ export default function Frontpage() {
         controls={false}
         id="bg-video"
       />
+      <div className="absolute top-0 left-0 w-full h-full bg-white/20"></div>
 
       {/* Front Content */}
       <div className="relative z-10 flex h-screen flex-col items-center justify-center space-y-15">
