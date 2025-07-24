@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+/*  FONT RELATED STUFF  */
+
 .roboto-bold-italic {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
@@ -29,4 +31,29 @@
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: bold;
+}
+
+/*  BUTTON RELATED STUFF  */
+
+.nav-button {
+  @apply bg-transparent text-white px-4 py-2 rounded-lg transition-all duration-200 relative;
+}
+
+.nav-button::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0.125rem;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.8));
+}
+
+.nav-button:hover::before {
+  width: 100%;
 }
