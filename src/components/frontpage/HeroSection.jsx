@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { FaSquareFacebook, FaInstagram, FaXTwitter, FaLinkedin } from "react-icons/fa6";
 
-export default function Frontpage() {
+export default function HeroSection() {
   // Playback useEffect
   useEffect(() => {
     const video = document.getElementById("bg-video");
@@ -10,7 +10,6 @@ export default function Frontpage() {
     }
   }, []);
 
-  // **** RENDER ****
   return (
     <div className="relative h-screen w-full overflow-hidden bg-slate-600 text-center">
       {/* Background video */}
@@ -24,11 +23,10 @@ export default function Frontpage() {
         controls={false}
         id="bg-video"
       />
-      <div className="absolute top-0 left-0 w-full h-full bg-white/20"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-white/15"></div>
 
       {/* Front Content */}
-      <div className="relative z-10 flex h-screen flex-col items-center justify-center space-y-15">
-        <p className="roboto-bold-italic tracking-[-0.1em] text-[128px] md:text-[256px] leading-none">EZRA</p>
+      <div className="relative z-10 flex h-screen flex-col items-center justify-center space-y-8 pt-16">
         <p className="merriweather-normal text-[48px] md:text-[64px] leading-none">
           Launching
           <br />

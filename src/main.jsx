@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import Frontpage from "./pages/frontpage_2.jsx";
+import Frontpage from "./pages/frontpage.jsx";
 import "@fontsource/inter/900.css";
 import "./index.css";
 
