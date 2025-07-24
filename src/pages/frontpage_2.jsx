@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { FaSquareFacebook, FaInstagram, FaXTwitter, FaLinkedin } from "react-icons/fa6";
-import Navbar from "../components/Navbar";
+import NavBar from "../components/navbar";
 
 export default function Frontpage() {
   // Playback useEffect
@@ -15,7 +15,7 @@ export default function Frontpage() {
   return (
     <div className="relative h-screen w-full overflow-hidden bg-slate-600 text-center">
       {/* Navbar */}
-      <Navbar />
+      <NavBar />
       
       {/* Background video */}
       <video

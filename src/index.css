@@ -1,6 +1,16 @@
 @import "tailwindcss";
 
-/*  FONT RELATED STUFF  */
+
+
+/*
+..........................................
+..%%%%%%...%%%%...%%..%%..%%%%%%...%%%%...
+..%%......%%..%%..%%%.%%....%%....%%......
+..%%%%....%%..%%..%%.%%%....%%.....%%%%...
+..%%......%%..%%..%%..%%....%%........%%..
+..%%.......%%%%...%%..%%....%%.....%%%%...
+..........................................
+*/
 
 .roboto-bold-italic {
   font-family: "Roboto", sans-serif;
@@ -33,10 +43,28 @@
   font-style: bold;
 }
 
-/*  BUTTON RELATED STUFF  */
+
+
+/* 
+....................................................
+..%%..%%...%%%%...%%..%%....%%%%%....%%%%...%%%%%...
+..%%%.%%..%%..%%..%%..%%....%%..%%..%%..%%..%%..%%..
+..%%.%%%..%%%%%%..%%..%%....%%%%%...%%%%%%..%%%%%...
+..%%..%%..%%..%%...%%%%.....%%..%%..%%..%%..%%..%%..
+..%%..%%..%%..%%....%%......%%%%%...%%..%%..%%..%%..
+....................................................
+*/
 
 .nav-button {
-  @apply bg-transparent text-white px-4 py-2 rounded-lg transition-all duration-200 relative;
+  @apply bg-transparent text-white px-3 py-2 rounded-lg transition-all duration-200 relative;
+}
+
+.nav-button-desktop {
+  @apply px-2 lg:px-4;
+}
+
+.nav-button-mobile {
+  @apply px-3 py-3 text-base;
 }
 
 .nav-button::before {
@@ -56,4 +84,45 @@
 
 .nav-button:hover::before {
   width: 100%;
+}
+
+.nav-button-mobile:hover::before {
+  width: 0;
+}
+
+.nav-button-mobile:hover {
+  @apply bg-white/20;
+  filter: none;
+}
+
+/* MOBILE MENU ANIMATIONS */
+.mobile-menu {
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: top;
+}
+
+.mobile-menu-closed {
+  max-height: 0;
+  opacity: 0;
+  transform: scaleY(0.95);
+}
+
+.mobile-menu-open {
+  max-height: 300px;
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.mobile-menu-open .nav-button-mobile {
+  animation: slideInFromTop 0.3s ease-out forwards;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+@keyframes slideInFromTop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
