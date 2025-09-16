@@ -1,5 +1,8 @@
 import { useEffect } from "react";
+import { COMPANY_NAME, navigation, ui } from '../../config.js';
 import { FaSquareFacebook, FaInstagram, FaXTwitter, FaLinkedin } from "react-icons/fa6";
+import { FaAngleDoubleDown } from "react-icons/fa";
+
 
 export default function HeroSection() {
   // Playback useEffect
@@ -27,37 +30,17 @@ export default function HeroSection() {
 
       {/* Front Content */}
       <div className="relative z-10 flex h-screen flex-col items-center justify-center space-y-8 pt-16">
+        <h1 className="roboto-bold-italic tracking-[-0.1em] text-black text-[160px] md:text-[192px] md:text-5xl">
+          {COMPANY_NAME}
+        </h1>
         <p className="merriweather-normal text-[48px] md:text-[64px] leading-none">
           Launching
           <br />
           Soon!
         </p>
 
-        {/* Contact Info */}
-        <div className="flex flex-col items-center space-y-2">
-          <p className="inter-normal text-[28px] md:text-[32px] px-4">
-            Connecting Believers Under One Platform
-          </p>
-          <div className="inter-normal rounded-lg text-[24px] mt-4">
-            Contact Us!
-          </div>
-          <p className="inter-bold text-[18px]">info@theezraco.com</p>
-
-          {/* Socials */}
-          <div className="flex space-x-4">
-            <div className="text-[32px]">
-              <FaSquareFacebook />
-            </div>
-            <div className="text-[32px]">
-              <FaInstagram />
-            </div>
-            <div className="text-[32px]">
-              <FaXTwitter />
-            </div>
-            <div className="text-[32px]">
-              <FaLinkedin />
-            </div>
-          </div>
+        <div className="absolute bottom-[64px] left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
+          <FaAngleDoubleDown className="text-[64px] animate-pulse text-zinc-900" />
         </div>
       </div>
     </div>
