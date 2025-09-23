@@ -1,4 +1,20 @@
+import { useEffect, useRef, useState } from "react";
+
 export default function MissionVisionSection() {
+  const ref = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.2 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
+  }, []);
+
   return (
     <div className="relative h-screen w-full overflow-hidden bg-black/40">
       {/* background image layer */}
@@ -15,7 +31,12 @@ export default function MissionVisionSection() {
       <div className="relative z-10 mx-auto max-w-7xl px-8 py-16 h-full flex items-end">
         <section className="flex flex-row justify-between w-full">
           {/* LEFT: Mission */}
-          <div>
+          <div
+            ref={ref}
+            className={`
+            transition-all duration-700
+            ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+          `}>
             <h2 className="roboto-bold-italic tracking-[-0.025em] text-[96px] text-white">Our Mission</h2>
             <p className="lato-regular max-w-prose text-white/90 text-[32px] leading-10">
               Bringing Believers Under Platform
@@ -23,7 +44,12 @@ export default function MissionVisionSection() {
           </div>
 
           {/* Right: Vision */}
-          <div>
+          <div
+            ref={ref}
+            className={`
+            transition-all duration-700
+            ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+          `}>
             <h2 className="roboto-bold-italic tracking-[-0.025em] text-[96px] text-white">The Vision</h2>
             <p className="lato-regular max-w-prose text-white/90 text-[32px] leading-10">
               Focusing on Every Community, <br /> In One Communion
