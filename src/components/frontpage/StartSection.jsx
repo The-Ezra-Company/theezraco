@@ -4,7 +4,7 @@ import { FaSquareFacebook, FaInstagram, FaXTwitter, FaLinkedin } from "react-ico
 import { FaAngleDoubleDown } from "react-icons/fa";
 
 
-export default function HeroSection() {
+export default function StartSection() {
   // Playback useEffect
   useEffect(() => {
     const video = document.getElementById("bg-video");

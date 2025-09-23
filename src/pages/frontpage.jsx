@@ -1,6 +1,6 @@
 import NavBar from "../components/navbar";
-import HeroSection from "../components/frontpage/HeroSection";
-import BlueSection from "../components/frontpage/BlueSection";
+import StartSection from "../components/frontpage/StartSection";
+import MissionVisionSection from "../components/frontpage/MissionVisionSection";
 
 export default function Frontpage() {
   return (
@@ -11,10 +11,10 @@ export default function Frontpage() {
       </div>
       
       {/* Hero Section */}
-      <HeroSection />
+      <StartSection />
       
       {/* Blue Section */}
-      <BlueSection />
+      <MissionVisionSection className="scroll-mt-20"/>
     </div>
   );
 }
