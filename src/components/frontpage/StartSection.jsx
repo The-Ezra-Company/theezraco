@@ -30,17 +30,16 @@ export default function StartSection() {
 
       {/* Front Content */}
       <div className="relative z-10 flex h-screen flex-col items-center justify-center space-y-8 pt-16">
-        <h1 className="roboto-bold-italic tracking-[-0.1em] text-black text-[160px] md:text-[192px] md:text-5xl">
+        <h1 className="roboto-bold-italic tracking-[-0.1em] text-black text-[144px] md:text-[192px] md:text-5xl">
           {COMPANY_NAME}
         </h1>
-        <p className="merriweather-normal text-[48px] md:text-[64px] leading-none">
+        <p className="lato-bold text-[32px] md:text-[64px] leading-none">
           Launching
-          <br />
-          Soon!
+          Soon
         </p>
 
         <div className="absolute bottom-[64px] left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
-          <FaAngleDoubleDown className="text-[64px] animate-pulse text-zinc-900" />
+          <FaAngleDoubleDown className="text-[48px] animate-pulse text-zinc-900" />
         </div>
       </div>
     </div>
