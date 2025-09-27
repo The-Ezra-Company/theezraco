@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-import { COMPANY_NAME, navigation, ui } from '../../config.js';
-import { FaSquareFacebook, FaInstagram, FaXTwitter, FaLinkedin } from "react-icons/fa6";
+import { COMPANY_NAME } from '../../config.js';
 import { FaAngleDoubleDown } from "react-icons/fa";
 
 
