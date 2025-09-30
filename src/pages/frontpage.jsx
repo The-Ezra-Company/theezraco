@@ -3,6 +3,7 @@ import StartSection from "../components/frontpage/StartSection";
 import MissionVisionSection from "../components/frontpage/MissionVisionSection";
 import { TheProblemPartOne, TheProblemPartTwo, TheProblemPartThree } from "../components/frontpage/TheProblem";
 import { EzraIntroPartOne, EzraIntroPartTwo } from "../components/frontpage/EzraIntro";
+import { ContactUs } from "../components/frontpage/ContactUs";
 
 export default function Frontpage() {
   return (
@@ -28,6 +29,9 @@ export default function Frontpage() {
 
       {/* Mission and Vision Section */}
       <MissionVisionSection className="scroll-mt-20" />
+
+      {/* Contact Us Page */}
+      <ContactUs />
     </div>
   );
 }

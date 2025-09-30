@@ -31,7 +31,7 @@ export function EzraIntroPartOne() {
                 <div className="relative">
                     {/* First Message */}
                     <span
-                        className={`lato-regular text-white text-[24px] md:text-[88px] transition-all duration-700 text-center ${showSecond ? "opacity-0 translate-y-0" : "opacity-100 translate-y-10"
+                        className={`lato-regular text-white text-[24px] md:text-[80px] transition-all duration-700 text-center ${showSecond ? "opacity-0 translate-y-0" : "opacity-100 translate-y-10"
                             }`}
                     >
                         Out of this Challenge
@@ -39,7 +39,7 @@ export function EzraIntroPartOne() {
 
                     {/* Second Message */}
                     <span
-                        className={`absolute inset-0 lato-regular text-white text-[24px] md:text-[88px] transition-all duration-700  text-center ${showSecond ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                        className={`absolute inset-0 lato-regular text-white text-[24px] md:text-[80px] transition-all duration-700  text-center ${showSecond ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                             }`}
                     >
                         We Created
