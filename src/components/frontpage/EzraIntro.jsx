@@ -1,107 +1,84 @@
 import { useEffect, useRef, useState } from "react";
 
 export function EzraIntroPartOne() {
-    // Scroll transition logic
-    const sectionRef = useRef(null);
-    const [showSecond, setShowSecond] = useState(false);
-    useEffect(() => {
-        const onScroll = () => {
-            const el = sectionRef.current;
-            if (!el) return;
-
-            const sectionTop = el.offsetTop;
-            const sectionHeight = el.offsetHeight;
-            const y = window.scrollY;
-
-            const progress = (y - sectionTop) / sectionHeight;
-            setShowSecond(progress >= 0.25 && progress <= 1.0);
-        };
-        onScroll();
-        window.addEventListener("scroll", onScroll, { passive: true });
-        window.addEventListener("resize", onScroll);
-        return () => {
-            window.removeEventListener("scroll", onScroll);
-            window.removeEventListener("resize", onScroll);
-        };
-    }, []);
-
-    return (
-        <section ref={sectionRef} className="relative h-[200vh] bg-black">
-            <div className="sticky top-0 h-screen flex items-center justify-center w-full">
-                <div className="relative">
-                    {/* First Message */}
-                    <span
-                        className={`lato-regular text-white text-[24px] md:text-[80px] transition-all duration-700 text-center ${showSecond ? "opacity-0 translate-y-0" : "opacity-100 translate-y-10"
-                            }`}
-                    >
-                        Out of this Challenge
-                    </span>
-
-                    {/* Second Message */}
-                    <span
-                        className={`absolute inset-0 lato-regular text-white text-[24px] md:text-[80px] transition-all duration-700  text-center ${showSecond ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                            }`}
-                    >
-                        We Created
-                    </span>
-                </div>
-            </div>
-        </section>
-    );
-}
-
-
-export function EzraIntroPartTwo() {
   const sectionRef = useRef(null);
-  const [sectionProgress, setSectionProgress] = useState(false);
+  const [progress, setProgress] = useState(0); // <- numeric, not boolean
 
   useEffect(() => {
-    const handleScroll = () => {
+    const onScroll = () => {
       const el = sectionRef.current;
       if (!el) return;
-
       const sectionTop = el.offsetTop;
       const sectionHeight = el.offsetHeight;
       const y = window.scrollY;
-
-      const progress = (y - sectionTop) / sectionHeight;
-      setSectionProgress(progress);
-      console.log(progress);
-      
+      const p = (y - sectionTop) / sectionHeight;
+      setProgress(p);
     };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleScroll);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
     };
   }, []);
 
   return (
-    <div
+    <section
       ref={sectionRef}
-      className={`relative h-screen md:h-[175vh] w-full overflow-hidden flex items-center justify-center transition-colors duration-700 ${
-        sectionProgress >= 0 ? "bg-white text-black" : "bg-black text-white"
+      className={`relative h-[350vh] transition-colors duration-700 ${
+        progress >= 0.45 ? "bg-white" : "bg-black"
       }`}
     >
-      {/* Image wrapper */}
-      <div className="relative">
-        {/* Phone Image */}
-        <img
-          src="/ezra_phone.png"
-          alt="Ezra phone"
-          className={`w-[50vh] md:w-[100vh] mt-[40vh] md:mt-[100vh] h-auto object-contain transform transition-transform duration-[1000ms] ease-out  ${sectionProgress >= 0 ? "translate-y-0" : "translate-y-full"}`}
-        />
+      <div className="sticky top-0 h-screen w-full">
+        <div className="relative h-full w-full">
+          {/* TEXT MESSAGES */}
+          <div className="pointer-events-none absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
+            {/* "Out of this Challenge" */}
+            <span
+              className={`lato-regular block w-full text-center text-[24px] text-white transition-all duration-700 md:text-[80px] ${
+                progress >= -0.1 && progress <= 0.2
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
+              }`}
+            >
+              Out of this Challenge
+            </span>
 
-        {/* Text overlaid on top */}
-        <div className="absolute inset-0 flex items-center justify-center overflow-visible mt-[50vh]">
-          <span className={`lato-black text-white font-bold text-[24px] md:text-[48px] xl:text-[64px] mt-[vh] md:mt-[30vh] whitespace-nowrap overflow-visible text-center transform transition-all duration-[1000ms] ease-out  ${sectionProgress >= 0 ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`}>
-            The Townhall for <br/> ALL Christians Alike
-          </span>
+            {/* "We Created" */}
+            <span
+              className={`lato-regular absolute inset-0 block text-center text-[24px] text-white transition-all duration-700 md:text-[80px] ${
+                progress > 0.2 && progress <= 0.45
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
+              }`}
+            >
+              We Created
+            </span>
+          </div>
+
+          {/* Phone Image*/}
+          <div
+            className={`relative mx-auto transition-transform justify-center flex flex-row duration-[1000ms] ease-out ${
+              progress > 0.45 ? "translate-y-[10vh]" : "translate-y-full"
+            }`}
+          >
+            {/* The Image */}
+            <img
+              src="/ezra_phone.png"
+              alt="Ezra phone"
+              className="h-auto object-contain mt-[20vh] md:mt-[0vh] w-[85vh]"
+            />
+
+            {/* The Text */}
+            <span
+              className="lato-bold absolute inset-0 md:mb-[35vh] flex items-center justify-center text-white md:text-[32px]"
+            >
+              The Townhall for All Christians Alike
+            </span>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
