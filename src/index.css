@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+
+
+/*
+..........................................
+..%%%%%%...%%%%...%%..%%..%%%%%%...%%%%...
+..%%......%%..%%..%%%.%%....%%....%%......
+..%%%%....%%..%%..%%.%%%....%%.....%%%%...
+..%%......%%..%%..%%..%%....%%........%%..
+..%%.......%%%%...%%..%%....%%.....%%%%...
+..........................................
+*/
+
 .roboto-bold-italic {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
@@ -29,4 +41,106 @@
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: bold;
+}
+
+.lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lato-bold {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lato-black {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: bold;
+}
+
+
+
+/* 
+....................................................
+..%%..%%...%%%%...%%..%%....%%%%%....%%%%...%%%%%...
+..%%%.%%..%%..%%..%%..%%....%%..%%..%%..%%..%%..%%..
+..%%.%%%..%%%%%%..%%..%%....%%%%%...%%%%%%..%%%%%...
+..%%..%%..%%..%%...%%%%.....%%..%%..%%..%%..%%..%%..
+..%%..%%..%%..%%....%%......%%%%%...%%..%%..%%..%%..
+....................................................
+*/
+
+.nav-button {
+  @apply bg-transparent text-white px-3 py-2 rounded-lg transition-all duration-200 relative;
+}
+
+.nav-button-desktop {
+  @apply px-2 lg:px-4;
+}
+
+.nav-button-mobile {
+  @apply px-3 py-3 text-base;
+}
+
+.nav-button::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0.125rem;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.8));
+}
+
+.nav-button:hover::before {
+  width: 100%;
+}
+
+.nav-button-mobile:hover::before {
+  width: 0;
+}
+
+.nav-button-mobile:hover {
+  @apply bg-white/20;
+  filter: none;
+}
+
+/* MOBILE MENU ANIMATIONS */
+.mobile-menu {
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: top;
+}
+
+.mobile-menu-closed {
+  max-height: 0;
+  opacity: 0;
+  transform: scaleY(0.95);
+}
+
+.mobile-menu-open {
+  max-height: 300px;
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.mobile-menu-open .nav-button-mobile {
+  animation: slideInFromTop 0.3s ease-out forwards;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+@keyframes slideInFromTop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
