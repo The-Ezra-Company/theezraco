@@ -28,7 +28,7 @@ export function TheProblemPartOne() {
 
       {/* CONTENT */}
 
-      <div className="relative z-10 mx-auto max-w-7xl px-8 py-16 md:py-8 md:py-40 h-full flex">
+      <div className="relative z-10 mx-auto max-w-7xl px-8 py-16 md:py-[25vh] h-full flex">
         <p
           ref={ref}
           className={`
@@ -72,7 +72,7 @@ export function TheProblemPartTwo() {
 
       {/* CONTENT */}
 
-      <div className="relative z-10 mx-auto max-w-7xl px-8 py-16 h-full flex">
+      <div className="relative z-10 mx-auto max-w-7xl px-8 py-[15vh] h-full flex">
         <p
           ref={ref}
           className={`
@@ -114,7 +114,7 @@ export function TheProblemPartThree() {
 
       {/* CONTENT */}
 
-      <div className="relative z-10 mx-auto max-w-7xl px-8 py-16 md:py-32 h-full flex items-end">
+      <div className="relative z-10 mx-auto max-w-7xl px-8 py-[10vh] md:py-[15vh] h-full flex items-end">
         <p
           ref={ref}
           className={`
