@@ -1,4 +1,5 @@
 import { COMPANY_NAME, navigation, ui } from '../config.js';
+import { Link } from "react-router-dom";
 import { useState } from 'react';
 
 export default function NavBar() {
@@ -9,18 +10,18 @@ export default function NavBar() {
       <div className="max-w-7xl mx-auto p-2 sm:px-4 lg:px-8">
         <div className="flex justify-between items-center sm:h-16">
           {/* EZRA Logo */}
-          <div className="flex-shrink-0">
+          <Link to="/" className="flex-shrink-0">
             <h1 className="roboto-bold-italic tracking-[-0.1em] text-white text-3xl md:text-5xl">
               {COMPANY_NAME}
             </h1>
-          </div>
+          </Link>
 
           {/* Desktop Navigation Buttons */}
           <div className="hidden sm:flex flex-shrink-0 space-x-2 lg:space-x-4">
             {navigation.items.map((item, index) => (
-              <button key={index} className="inter-normal nav-button nav-button-desktop">
+              <Link to={item.link} key={index} className="inter-normal nav-button nav-button-desktop">
                 {item.label}
-              </button>
+              </Link>
             ))}
           </div>
 

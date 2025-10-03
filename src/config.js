@@ -52,10 +52,10 @@ const config = {
     // Navigation Configuration
     navigation: {
         items: [
-            { label: "News", href: "/news", external: false },
-            { label: "Community", href: "/community", external: false },
-            { label: "Research", href: "/research", external: false },
-            { label: "Contact Us", href: "/contact", external: false },
+            { label: "News", link: "/news", external: false },
+            { label: "Community", link: "/community", external: false },
+            { label: "Research", link: "/research", external: false },
+            { label: "Contact Us", link: "/contact", external: false },
         ],
     },
 

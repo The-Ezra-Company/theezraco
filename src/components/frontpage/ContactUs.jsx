@@ -7,7 +7,7 @@ import {
 } from "react-icons/fa6";
 import { MdOutlineEmail } from "react-icons/md";
 
-export function ContactUs() {
+export default function ContactUs() {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 

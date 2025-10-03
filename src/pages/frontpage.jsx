@@ -2,8 +2,8 @@ import NavBar from "../components/navbar";
 import StartSection from "../components/frontpage/StartSection";
 import MissionVisionSection from "../components/frontpage/MissionVisionSection";
 import { TheProblemPartOne, TheProblemPartTwo, TheProblemPartThree } from "../components/frontpage/TheProblem";
-import { EzraIntroPartOne } from "../components/frontpage/EzraIntro";
-import { ContactUs } from "../components/frontpage/ContactUs";
+import EzraIntro from "../components/frontpage/EzraIntro";
+import ContactUs from "../components/frontpage/ContactUs";
 
 export default function Frontpage() {
   return (
@@ -24,7 +24,7 @@ export default function Frontpage() {
       </div>
 
       {/* What we're providing*/}
-      <EzraIntroPartOne />
+      <EzraIntro />
 
       {/* Mission and Vision Section */}
       <MissionVisionSection className="scroll-mt-20" />

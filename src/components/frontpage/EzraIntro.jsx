@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export function EzraIntroPartOne() {
+export default function EzraIntro() {
   const sectionRef = useRef(null);
   const [progress, setProgress] = useState(0); // <- numeric, not boolean
 
