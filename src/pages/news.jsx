@@ -1,36 +1,42 @@
-import { COMPANY_NAME, navigation, ui } from "../config.js";
+import { COMPANY_NAME } from "../config.js";
 import { FaMailBulk } from "react-icons/fa";
 import NavBar from "../components/navbar";
+import NewsPreview from "../components/news/NewsPreview.jsx";
 
 export default function NewsPage() {
-  const items = Array.from({ length: 14 }, (_, i) => `Item ${i + 1}`);
+  const items = [
+    { title: "Breaking News", text: "This is a preview of the article text. It may be longer than the allowed size so it should truncate properly." },
+    { title: "Tech Update", text: "Latest developments in the tech world are shaking things up. Stay tuned for more!" },
+    { title: "Space Exploration", text: "NASA announces new missions to explore the outer reaches of our solar system." },
+    { title: "Breaking News", text: "This is a preview of the article text. It may be longer than the allowed size so it should truncate properly." },
+    { title: "Tech Update", text: "Latest developments in the tech world are shaking things up. Stay tuned for more!" },
+    { title: "Space Exploration", text: "NASA announces new missions to explore the outer reaches of our solar system." },
+  ];
 
   return (
-    <div className="w-full">
+    <div className="min-h-screen w-full bg-black text-white">
       {/* Navbar */}
       <div className="fixed top-0 left-0 z-100 w-full">
         <NavBar />
       </div>
 
-      <div className="h-full w-full bg-black pt-[15vh]">
+      {/* Main Content */}
+      <div className="pt-[15vh] md:pt-[16vh] lg:pt-[20vh] flex flex-col items-center">
         {/* Header */}
-        <div className="flex items-center justify-center text-[24px] text-white">
-          <FaMailBulk className="mt-[6px] mr-[12px] text-[32px] md:text-[192px]" />
-          <div className="roboto-bold-italic ml-[64px] text-[192px] tracking-[-0.1em] text-white">
+        <div className="flex flex-wrap items-center justify-center text-[24px] md:text-[192px]">
+          <FaMailBulk className="mt-[4px] md:mt-[6px] mr-[12px] text-[48px] md:text-[120px] lg:text-[192px]" />
+          <div className="roboto-bold-italic text-[48px] tracking-[-0.1em] md:ml-[24px] lg:ml-[64px] md:text-[96px] lg:text-[136px]">
             {COMPANY_NAME}
           </div>
-          <div className="mb-[28px] ml-[40px] text-[200px]">News</div>
+          <div className="inter-normal ml-[8px] text-[48px] md:ml-[24px] lg:ml-[24px] l md:text-[96px] lg:text-[128px]">
+            News
+          </div>
         </div>
 
-        {/* News Articles */}
-        <div className="mx-auto grid max-w-7xl grid-cols-3 gap-4 p-4">
+        {/* News Grid */}
+        <div className="mx-auto mt-[4vh] md:mt-[5vh] lg:mt-[7vh] grid max-w-7xl grid-cols-1 gap-[32px] py-4 px-8 sm:grid-cols-2 md:grid-cols-3">
           {items.map((item, index) => (
-            <div
-              key={index}
-              className="rounded-lg bg-blue-500 p-4 text-center text-white"
-            >
-              {item}
-            </div>
+            <NewsPreview key={index} title={item.title} text={item.text} />
           ))}
         </div>
       </div>

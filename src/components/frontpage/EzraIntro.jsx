@@ -74,7 +74,7 @@ export default function EzraIntro() {
             <span
               className="lato-bold absolute inset-0 md:mb-[35vh] flex items-center justify-center text-white md:text-[32px]"
             >
-              The Townhall for All Christians Alike
+              The Townhall for ALL Christians Alike
             </span>
           </div>
         </div>
