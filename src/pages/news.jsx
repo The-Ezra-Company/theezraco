@@ -4,11 +4,13 @@ import NavBar from "../components/navbar";
 import NewsPreview from "../components/news/NewsPreview.jsx";
 
 export default function NewsPage() {
+  const LOREM_IPSUM_LONG = "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas."
+
   const items = [
-    { title: "Breaking News", text: "This is a preview of the article text. It may be longer than the allowed size so it should truncate properly." },
+    { title: "Breaking News", text: LOREM_IPSUM_LONG },
     { title: "Tech Update", text: "Latest developments in the tech world are shaking things up. Stay tuned for more!" },
     { title: "Space Exploration", text: "NASA announces new missions to explore the outer reaches of our solar system." },
-    { title: "Breaking News", text: "This is a preview of the article text. It may be longer than the allowed size so it should truncate properly." },
+    { title: "Breaking News", text: LOREM_IPSUM_LONG },
     { title: "Tech Update", text: "Latest developments in the tech world are shaking things up. Stay tuned for more!" },
     { title: "Space Exploration", text: "NASA announces new missions to explore the outer reaches of our solar system." },
   ];
@@ -34,7 +36,7 @@ export default function NewsPage() {
         </div>
 
         {/* News Grid */}
-        <div className="mx-auto mt-[4vh] md:mt-[5vh] lg:mt-[7vh] grid max-w-7xl grid-cols-1 gap-[32px] py-4 px-8 sm:grid-cols-2 md:grid-cols-3">
+        <div className="mx-auto mt-[4vh] md:mt-[5vh] lg:mt-[7vh] grid max-w-7xl grid-cols-1 gap-[32px] py-4 px-8 md:grid-cols-2 xl:grid-cols-3">
           {items.map((item, index) => (
             <NewsPreview key={index} title={item.title} text={item.text} />
           ))}
