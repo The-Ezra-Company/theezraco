@@ -24,7 +24,7 @@ export default function NewsPreview({ title, text }) {
         </div>
 
         {/* Body text with bottom fade */}
-        <p className="relative mt-2 flex-1 overflow-hidden text-sm text-ellipsis text-gray-200">
+        <p className="leading-[1.5] relative mt-2 flex-1 overflow-hidden text-sm text-ellipsis text-gray-200">
           {text}
         </p>
       </div>
