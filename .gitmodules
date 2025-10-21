@@ -1,0 +1,3 @@
+[submodule "src/news"]
+	path = src/news
+	url = https://github.com/The-Ezra-Company/newsletter.git
