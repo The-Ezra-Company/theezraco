@@ -53,9 +53,9 @@ const config = {
     navigation: {
         items: [
             { label: "News", link: "/news", external: false },
-            { label: "Community", link: "/community", external: false },
-            { label: "Research", link: "/research", external: false },
-            { label: "Contact Us", link: "/contact", external: false },
+            // { label: "Community", link: "/community", external: false },
+            // { label: "Research", link: "/research", external: false },
+            // { label: "Contact Us", link: "/contact", external: false },
         ],
     },
 

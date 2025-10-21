@@ -1,43 +1,11 @@
 import { COMPANY_NAME } from "../config.js";
 import { FaMailBulk } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { news_items } from "../utils/news_list.jsx";
 import NavBar from "../components/navbar";
-import NewsPreview from "../components/news/NewsPreview.jsx";
+import NewsCard from "../components/news/NewsCard.jsx";
 
 export default function NewsPage() {
-  const IMAGE_URL =
-    "https://images.unsplash.com/photo-1549880181-56a44cf4a9a5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-
-  const LOREM_IPSUM_LONG =
-    "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas.";
-
-  const items = [
-    { title: "Breaking News", text: LOREM_IPSUM_LONG },
-    {
-      title: "Tech Update",
-      text: "Latest developments in the tech world are shaking things up. Stay tuned for more!",
-    },
-    { title: "Breaking News", text: LOREM_IPSUM_LONG },
-    {
-      title: "Tech Update",
-      text: "Latest developments in the tech world are shaking things up. Stay tuned for more!",
-    },
-    { title: "Breaking News", text: LOREM_IPSUM_LONG },
-    {
-      title: "Tech Update",
-      text: "Latest developments in the tech world are shaking things up. Stay tuned for more!",
-    },
-    { title: "Breaking News", text: LOREM_IPSUM_LONG },
-    {
-      title: "Tech Update",
-      text: "Latest developments in the tech world are shaking things up. Stay tuned for more!",
-    },
-    { title: "Breaking News", text: LOREM_IPSUM_LONG },
-    {
-      title: "Tech Update",
-      text: "Latest developments in the tech world are shaking things up. Stay tuned for more!",
-    },
-  ];
-
   return (
     <div className="relative min-h-screen w-full overflow-hidden text-white">
       {/* Background Layer */}
@@ -47,9 +15,9 @@ export default function NewsPage() {
 
         {/* Image Overlay With Fade to Transparent */}
         <div
-          className="absolute top-0 left-0 h-[110vh] w-full bg-cover md:bg-contain bg-top bg-no-repeat"
+          className="absolute top-0 left-0 h-[110vh] w-full bg-cover bg-top bg-no-repeat"
           style={{
-            backgroundImage: `url('${IMAGE_URL}')`,
+            backgroundImage: `url("https://images.unsplash.com/photo-1549880181-56a44cf4a9a5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
             maskImage:
               "linear-gradient(to bottom, black 5%, rgba(0,0,0,0.7) 65%, rgba(0,0,0,0.3) 80%, transparent 100%)",
             WebkitMaskImage:
@@ -58,7 +26,7 @@ export default function NewsPage() {
         />
 
         <div
-          className="pointer-events-none absolute top-[35vh] left-0 h-[100vh] md:h-[75vh] w-full backdrop-blur-3xl"
+          className="pointer-events-none absolute top-[35vh] left-0 h-[100vh] w-full backdrop-blur-3xl md:h-[75vh]"
           style={{
             maskImage: "linear-gradient(to top, black 0%, transparent 100%)",
             WebkitMaskImage:
@@ -92,8 +60,10 @@ export default function NewsPage() {
 
           {/* News Grid */}
           <div className="mx-auto mt-[4vh] grid max-w-7xl grid-cols-1 gap-[32px] px-8 py-4 md:mt-[5vh] md:grid-cols-2 lg:mt-[7vh] xl:grid-cols-3">
-            {items.map((item, index) => (
-              <NewsPreview key={index} title={item.title} text={item.text} />
+            {news_items.map((item, index) => (
+              <Link key={item.slug} to={`/news/${item.slug}`}>
+                <NewsCard key={index} title={item.title} text={item.text} image={item.image} />
+              </Link>
             ))}
           </div>
         </div>
