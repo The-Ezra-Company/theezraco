@@ -71,7 +71,7 @@ In today’s fast-paced digital world, staying connected to faith and community 
 
 Our **Home Page** provides a tailored spiritual experience each day. From a personalized greeting and daily verse to church updates and inspirational posts, Ezra keeps users grounded in faith while staying connected to their church family. The “Discuss with Ezra” button encourages meaningful reflection and conversation around scripture, creating a space where technology deepens, rather than replaces, spiritual connection. We are currently in the progress of developing our state of the art Large Language Model (LLM) which will help enhance the experience for the individual. **_STAY TUNED!_**
 
-With its intuitive and modern interface, Ezra connects users directly to local churches and communities. The **_Community Map_** feature helps users discover nearby churches, like Rock Point Church in Queen Creek, AZ, with detailed profiles, reviews, service times, and opportunities to get involved. Whether it’s joining a Sunday worship service, registering for a baptism, or connecting with like-minded believers, Ezra makes community engagement simple and personal.
+With its intuitive and modern interface, Ezra connects users directly to local churches and communities. The **Community Map** feature helps users discover nearby churches, like Rock Point Church in Queen Creek, AZ, with detailed profiles, reviews, service times, and opportunities to get involved. Whether it’s joining a Sunday worship service, registering for a baptism, or connecting with like-minded believers, Ezra makes community engagement simple and personal.
 
 Ezra’s mission is simple yet profound: **bring users under one platform**. By seamlessly blending innovation with inspiration, Ezra empowers churches and individuals alike to grow together, support one another, and bring community to life through the power of technology.
 
@@ -123,7 +123,7 @@ Ezra is redefining what it means to build Chrisitan communities in the modern wo
         `}),B.jsx("div",{className:"relative z-10 mx-auto max-w-7xl px-8 py-[15vh] h-full flex",children:B.jsxs("p",{ref:n,className:`
             transition-all duration-700 lato-regular max-w-prose text-white/90 text-[48px] md:text-[96px]
             ${a?"opacity-100 translate-y-0":"opacity-0 translate-y-10"}
-          `,children:["not so much with it's ",B.jsx("b",{className:"lato-black",children:"youth"}),"..."]})})]})}function Ov(){const n=H.useRef(null),[a,i]=H.useState(!1);return H.useEffect(()=>{const u=new IntersectionObserver(([c])=>i(c.isIntersecting),{threshold:.2});return n.current&&u.observe(n.current),()=>{n.current&&u.unobserve(n.current)}},[]),B.jsxs("div",{className:"relative h-screen w-full overflow-hidden bg-black/40",children:[B.jsx("div",{className:`
+          `,children:["not so much with it's ",B.jsx("b",{className:"lato-black",children:"young adults"}),"..."]})})]})}function Ov(){const n=H.useRef(null),[a,i]=H.useState(!1);return H.useEffect(()=>{const u=new IntersectionObserver(([c])=>i(c.isIntersecting),{threshold:.2});return n.current&&u.observe(n.current),()=>{n.current&&u.unobserve(n.current)}},[]),B.jsxs("div",{className:"relative h-screen w-full overflow-hidden bg-black/40",children:[B.jsx("div",{className:`
           absolute inset-0
           bg-[url('https://images.unsplash.com/photo-1499678329028-101435549a4e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]
           bg-no-repeat bg-center md:bg-bottom md:bg-cover
