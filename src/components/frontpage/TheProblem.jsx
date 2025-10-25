@@ -79,7 +79,7 @@ export function TheProblemPartTwo() {
             transition-all duration-700 lato-regular max-w-prose text-white/90 text-[48px] md:text-[96px]
             ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
           `}>
-          not so much with it's <b className="lato-black">youth</b>...
+          not so much with it's <b className="lato-black">young adults</b>...
         </p>
       </div>
     </div>
